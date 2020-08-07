@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Click the button to sort the array.</h3>
+
+<button onclick="myFunction()">Sort</button>
+
+<p id="demo"></p>
+
+<script>
+
+var limit = prompt("How many names would you like to enter", " ");
+
+var names = [];
+document.getElementById("demo").innerHTML = names;
+
+for(i=0; i<limit; i++)
+{
+    var name = prompt("Enter a name", " ");
+    names.push(name)
+}
+
+function myFunction() {
+  names.sort();
+  document.getElementById("demo").innerHTML = names;
+}
+</script>
+
+</body>
+</html>

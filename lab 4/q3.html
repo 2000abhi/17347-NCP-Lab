@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+    <img src="image.jpg" usemap="#map" >
+    <map name="#map">
+        <area shape="rect" coords="0,0,128,197" onmouseover="left()" onmouseout="out()" onclick="imageClick()">
+        <area shape="rect" coords="128,0,256,197" onmouseover="right()" onmouseout="out()" onclick="imageClick()">
+    </map>
+    <p id="popup">Popup text will be displayed here</p>
+</body>
+
+<script>
+    function left()
+    {
+        document.getElementById("popup").innerText="Lefttttttttttttttt"
+    }
+    
+    function right() {
+        document.getElementById("popup").innerText = "Right"
+    }
+
+    out()
+    {
+        document.getElementById("popup").innerText= "Popup will be displayed here"
+    }
+    function imageClick()
+    {
+        window.open("q3_1.html")
+    }
+</script>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <img src="" id="image" style="height: 300px; width: auto;">
+    <h3 id="desc"></h3>
+
+    <button id="gen" onclick="thefunc()">Randomize</button>
+    <table>
+        <tr>
+            <td>MSD</td>
+            <td id="1">0</td>
+        </tr>
+        <tr>
+            <td>Kohli</td>
+            <td id="2">0</td>
+        </tr>
+        <tr>
+            <td>Raina</td>
+            <td id="3">0</td>
+        </tr>
+        <tr>
+            <td>Sachin</td>
+            <td id="4">0</td>
+        </tr>
+        <tr>
+            <td>Dravid</td>
+            <td id="5">0</td>
+        </tr>
+        
+        
+        
+        
+    </table>
+
+    <script>
+        var n = {"1": 0,"2": 0,"3": 0,"4": 0,"5": 0,}
+
+        var texts = ["MSD","Kohli","Raina","Sachin","Dravid"]
+
+        var images = [
+            "msd.jpg","kohli.jpg","raina.jpg","sachin.jpg","dravid.jpg"
+                       ]
+
+
+        function thefunc()
+        {
+            for(var i=0;i<1;i++)
+            {
+                setTimeout(function () {
+                    var rand = Math.floor(Math.random() * 5)
+                    if (document.getElementById(String(rand + 1)).innerText == "0") {
+                        document.getElementById(String(rand + 1)).innerText = "1"
+                        n[String(rand + 1)] = 1
+                    } else {
+                        document.getElementById(String(rand + 1)).innerText = String(parseInt(document.getElementById(String(rand + 1)).innerText) + 1)
+                        n[String(rand + 1)] = parseInt(document.getElementById(String(rand + 1)).innerText) + 1
+                    }
+                    document.getElementById('desc').innerText = texts[rand]
+                    document.getElementById("image").src = images[rand]
+                }, 2000 * i); 
+                
+                
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
